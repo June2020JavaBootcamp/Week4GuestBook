@@ -3,30 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <link rel="stylesheet" th:href="@{/styles/main.css}">
     <title>Add to Guestbook</title>
 </head>
 <body>
 <div th:replace="base :: navlinksfg"></div>
 
+<h3>[[${message}]]</h3>
+
+<div class = "mainform">
 <form th:action="@{/add}" th:object="${guestPost}" method="post">
 
-    Post Number (Enter any number): <input type="number" th:field ="*{postNumber}"><br>
+    <div class="form-group">
+        <label>Guest Number</label>
+        <input type="number" th:field ="*{postNumber}" class="form-control">
+        <small class="form-text text-muted">Enter any number</small>
+    </div>
 
-    Your name: <input type="text" th:field="*{name}"><br>
+    <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" th:field="*{name}" class="form-control">
+    </div>
 
-    Date: <input type="date" th:field="*{date}"><br>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="date" th:field="*{date}" class="form-control">
+    </div>
 
-    Message:<br>
-    <textarea name="description" rows="4" cols="50" th:field="*{wishes}"></textarea><br>
+    <div class="form-group">
+        <label>Message</label>
+        <textarea name="description" rows="4" cols="50" th:field="*{wishes}"></textarea><br>
+    </div>
 
-    <input type="submit" value="Post">
+        <input type="submit" value="Post">
 
 </form>
-
-
-
-
+</div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

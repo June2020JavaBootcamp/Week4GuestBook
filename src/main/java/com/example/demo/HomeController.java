@@ -41,6 +41,7 @@ public class HomeController {
             }
         }
         model.addAttribute("guestPost", guestPost);
+        model.addAttribute("message", "Sign our Guestbook!e");
         return "viewPost";
     }
 
@@ -56,6 +57,7 @@ public class HomeController {
             }
         }
         model.addAttribute("guestPost", guestPost);
+        model.addAttribute("message", "Update Post");
         return "addPost";
     }
 

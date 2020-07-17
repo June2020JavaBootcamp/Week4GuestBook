@@ -12,7 +12,6 @@ public class GuestPost {
     public GuestPost() {
     }
 
-
     public String getName() {
         return name;
     }
